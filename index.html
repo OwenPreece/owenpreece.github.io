@@ -3,79 +3,73 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Owen Preece’s EC EN 340 portfolio featuring circuit design projects, technical learning, and a design journey.">
+  <meta name="description" content="Owen Preece's EC EN 340 portfolio: electronic circuit design, simulation, hardware testing, and engineering development.">
   <title>EC EN 340 Portfolio | Owen Preece</title>
   <style>
     :root {
-      --ink: #172b3a;
-      --muted: #536675;
-      --paper: #f5f7f8;
-      --card: #ffffff;
-      --accent: #087e8b;
-      --accent-dark: #075c66;
-      --line: #d9e2e7;
-      --soft: #e8f4f4;
-      --width: 1080px;
+      --ink: #172b3a; --muted: #536675; --paper: #f5f7f8; --card: #fff;
+      --accent: #087e8b; --accent-dark: #075c66; --line: #d9e2e7;
+      --soft: #e8f4f4; --navy: #102d3b; --width: 1080px;
     }
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; scroll-padding-top: 82px; }
-    body {
-      margin: 0; background: var(--paper); color: var(--ink);
-      font: 16px/1.65 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    }
+    body { margin: 0; background: var(--paper); color: var(--ink);
+      font: 16px/1.65 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
     a { color: var(--accent-dark); }
-    a:focus-visible, button:focus-visible { outline: 3px solid #e2a83b; outline-offset: 3px; }
+    a:focus-visible { outline: 3px solid #e2a83b; outline-offset: 3px; }
     .skip-link { position: absolute; left: -9999px; top: 0; background: white; padding: .7rem; z-index: 20; }
     .skip-link:focus { left: 1rem; }
-    header { background: #102d3b; color: white; }
-    .nav-wrap { max-width: var(--width); margin: auto; padding: .85rem 1.25rem; display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
-    .brand { color: white; font-weight: 750; letter-spacing: .02em; text-decoration: none; }
+    header, footer { background: var(--navy); color: white; }
+    .nav-wrap, .hero-inner, main, footer .footer-inner { max-width: var(--width); margin: auto; }
+    .nav-wrap { padding: .85rem 1.25rem; display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+    .brand { color: white; font-weight: 750; text-decoration: none; }
     nav ul { display: flex; gap: 1.1rem; flex-wrap: wrap; padding: 0; margin: 0; list-style: none; }
     nav a { color: #e5f0f3; text-decoration: none; font-size: .94rem; }
     nav a:hover { text-decoration: underline; }
-    .hero { background: linear-gradient(125deg, #102d3b 0%, #164d5a 100%); color: white; padding: 5rem 1.25rem 4.5rem; }
-    .hero-inner, main, footer .footer-inner { max-width: var(--width); margin: auto; }
+    .hero { background: linear-gradient(125deg, #102d3b, #164d5a); color: white; padding: 4.7rem 1.25rem 4.2rem; }
     .eyebrow { color: #9fe1df; text-transform: uppercase; letter-spacing: .14em; font-size: .78rem; font-weight: 750; }
     h1 { font-size: clamp(2.3rem, 6vw, 4.2rem); line-height: 1.08; margin: .6rem 0 1rem; letter-spacing: -.035em; }
-    .hero p { max-width: 730px; color: #e1edf0; font-size: 1.12rem; }
+    .hero p { max-width: 760px; color: #e1edf0; font-size: 1.12rem; }
     .hero-actions { display: flex; flex-wrap: wrap; gap: .8rem; margin-top: 1.7rem; }
     .button { display: inline-block; padding: .72rem 1rem; border-radius: 6px; background: #b5eeea; color: #103641; font-weight: 750; text-decoration: none; }
     .button.secondary { border: 1px solid #b5d3d9; color: white; background: transparent; }
     main { padding: 1.5rem 1.25rem 4rem; }
     section { padding: 2.2rem 0; }
     .section-heading { margin-bottom: 1.2rem; }
-    .section-heading .kicker { color: var(--accent); text-transform: uppercase; letter-spacing: .12em; font-weight: 750; font-size: .76rem; }
+    .kicker { color: var(--accent); text-transform: uppercase; letter-spacing: .12em; font-weight: 750; font-size: .76rem; }
     h2 { font-size: clamp(1.65rem, 3vw, 2.25rem); line-height: 1.2; margin: .25rem 0 .55rem; letter-spacing: -.02em; }
     h3 { margin: .2rem 0 .5rem; line-height: 1.3; }
-    .section-intro { color: var(--muted); max-width: 760px; margin: 0; }
+    .section-intro { color: var(--muted); max-width: 780px; margin: 0; }
     .intro-grid { display: grid; grid-template-columns: 1.4fr 1fr; gap: 1.1rem; }
-    .panel, .project, .journey-card { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 1.35rem; box-shadow: 0 5px 18px rgba(18, 46, 60, .04); }
-    .panel p:first-child { margin-top: 0; }
-    .panel p:last-child { margin-bottom: 0; }
+    .panel, .project, .journey-card { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 1.35rem; box-shadow: 0 5px 18px rgba(18,46,60,.04); }
+    .panel p:first-child { margin-top: 0; } .panel p:last-child { margin-bottom: 0; }
     .target { background: var(--soft); border-color: #c4e3e2; }
     .target strong { display: block; color: var(--accent-dark); margin-bottom: .35rem; }
-    .project-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; margin-top: 1.35rem; }
+    .contents { display: flex; flex-wrap: wrap; gap: .55rem 1.1rem; padding: 0; margin: .9rem 0 0; list-style: none; }
+    .contents a { font-weight: 650; }
+    .project-grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 1rem; margin-top: 1.35rem; align-items: stretch; }
     .project { display: flex; flex-direction: column; min-height: 100%; }
     .project-figure { margin: .35rem 0 1rem; }
-    .project-figure img { display: block; width: 100%; max-height: 420px; aspect-ratio: 16 / 10; object-fit: contain; background: #f1f5f6; border: 1px solid var(--line); border-radius: 8px; }
+    .project-figure img { display: block; width: 100%; max-height: 420px; aspect-ratio: 16/10; object-fit: contain; background: #f1f5f6; border: 1px solid var(--line); border-radius: 8px; }
     .project-figure figcaption { color: var(--muted); font-size: .88rem; margin-top: .45rem; }
     .project-number { display: inline-flex; width: 2rem; height: 2rem; border-radius: 50%; align-items: center; justify-content: center; background: var(--soft); color: var(--accent-dark); font-weight: 800; margin-bottom: .8rem; }
     .tag { display: inline-block; align-self: flex-start; border: 1px solid var(--line); border-radius: 99px; padding: .15rem .55rem; color: var(--muted); font-size: .78rem; margin: .15rem .25rem .5rem 0; }
+    .tag.pending { background: #fff8e8; border-color: #ead8ad; color: #73551c; }
     .project dl { margin: .6rem 0 1rem; }
     .project dt { font-weight: 750; margin-top: .7rem; }
     .project dd { margin: .1rem 0 0; color: var(--muted); }
     .project-link { margin-top: auto; padding-top: .75rem; font-weight: 750; }
-    .journey-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; margin-top: 1.2rem; }
+    .journey-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 1rem; margin-top: 1.2rem; }
     .journey-card h3 { color: var(--accent-dark); }
     .journey-card p { margin-bottom: 0; color: var(--muted); }
-    .next-step { margin-top: 1rem; border-radius: 10px; padding: 1rem 1.2rem; background: #e8f4f4; border: 1px solid #c4e3e2; }
+    .next-step { margin-top: 1rem; border-radius: 10px; padding: 1rem 1.2rem; background: var(--soft); border: 1px solid #c4e3e2; }
     .next-step strong { color: var(--accent-dark); }
-    .checklist { padding-left: 1.2rem; }
-    .checklist li { margin: .35rem 0; }
-    footer { background: #102d3b; color: #d8e7eb; padding: 1.5rem 1.25rem; }
+    .feedback { border-left: 4px solid var(--accent); padding: .2rem 0 .2rem 1rem; margin-top: 1rem; }
+    .notice { font-size: .87rem; color: var(--muted); }
+    footer { padding: 1.5rem 1.25rem; }
     footer .footer-inner { display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
     footer p { margin: 0; font-size: .9rem; }
-    .notice { font-size: .87rem; color: var(--muted); }
+    code { overflow-wrap: anywhere; }
     @media (max-width: 720px) {
       .nav-wrap { align-items: flex-start; flex-direction: column; }
       nav ul { gap: .5rem 1rem; }
@@ -83,11 +77,9 @@
       .intro-grid, .project-grid, .journey-grid { grid-template-columns: 1fr; }
     }
     @media print {
-      header nav, .hero-actions { display: none; }
-      body { background: white; }
+      header nav, .hero-actions { display: none; } body { background: white; }
       .hero { background: white; color: var(--ink); padding: 1rem 0; }
-      .hero p, .eyebrow { color: var(--ink); }
-      main { padding: 0; }
+      .hero p, .eyebrow { color: var(--ink); } main { padding: 0; }
       .panel, .project, .journey-card { box-shadow: none; break-inside: avoid; }
     }
   </style>
@@ -100,9 +92,11 @@
       <nav aria-label="Main navigation">
         <ul>
           <li><a href="#about">Introduction</a></li>
-          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contents">Contents</a></li>
+          <li><a href="#projects">Artifacts</a></li>
+          <li><a href="#revision">Revision</a></li>
           <li><a href="#journey">Design Journey</a></li>
-          <li><a href="#next-steps">Next Steps</a></li>
+          <li><a href="#aim">BYU Aim</a></li>
         </ul>
       </nav>
     </div>
@@ -110,11 +104,11 @@
 
   <div class="hero" id="top">
     <div class="hero-inner">
-      <div class="eyebrow">Working Collection · Checkpoint 1</div>
+      <div class="eyebrow">EC EN 340 · Electronic Circuit Design · Portfolio Checkpoint 2</div>
       <h1>Owen Preece</h1>
-      <p><strong>Electrical and computer engineering student developing circuit design, analysis, and technical communication skills.</strong> This portfolio focuses on my projects and learning in EC EN 340, including the work I contribute, the engineering skills I practice, and how I plan to improve.</p>
+      <p><strong>Electrical and computer engineering student developing practical circuit-design, analysis, and troubleshooting skills.</strong> This portfolio presents selected EC EN 340 work and explains the engineering problems, my contributions, the outcomes, and the skills demonstrated by each artifact.</p>
       <div class="hero-actions">
-        <a class="button" href="#projects">Explore projects</a>
+        <a class="button" href="#projects">View selected artifacts</a>
         <a class="button secondary" href="#journey">Read my design journey</a>
       </div>
     </div>
@@ -125,104 +119,197 @@
       <div class="section-heading">
         <div class="kicker">01 · Professional introduction</div>
         <h2 id="about-title">About this portfolio</h2>
-        <p class="section-intro">A concise, employer-facing overview of my current work and direction.</p>
+        <p class="section-intro">A focused collection of course work showing how I approach electronic circuit design problems.</p>
       </div>
       <div class="intro-grid">
         <div class="panel">
           <h3>Introduction</h3>
-          <p>My name is Owen Preece, and this page is a collection of projects and work from EC EN 340: Electronic Circuit Design. The goal of this portfolio is to document what I work on in the class, explain my contribution to each project or lab, and show how I apply course concepts to practical circuit-design problems.</p>
-          <p>EC EN 340 emphasizes electronic device models and amplifier design, especially amplifier gain and frequency response—principles that affect the performance of both analog and digital systems. I will use this page to organize project evidence, explain my methods and results, and reflect on what I learn throughout the course.</p>
-          <p><strong>Course details:</strong> EC EN 340, Section 002 · Thursdays, 3:00–5:50 p.m. · 438 EB</p>
+          <p>I am an electrical and computer engineering student building a foundation in electronic circuit design. In EC EN 340, I have worked with op-amp circuits, simulation, signal conditioning, component characterization, and hardware troubleshooting. I am particularly interested in learning how circuit theory translates into functioning hardware and how measurements can be used to identify the source of a problem.</p>
+          <p>This portfolio is organized for an engineering audience. Each artifact identifies the problem being addressed, my contribution, the result, and the technical abilities the work demonstrates. The collection includes simulation and design work as well as projects that connect analysis to physical circuit construction and testing.</p>
+          <p><strong>Course:</strong> EC EN 340 — Electronic Circuit Design</p>
         </div>
         <aside class="panel target">
-          <strong>Skills developed in EC EN 340</strong>
-          <ul class="checklist">
-            <li>Apply electronic-device models to circuit problems</li>
-            <li>Design amplifiers to meet engineering needs</li>
-            <li>Document experiments and write summary reports</li>
+          <strong>Developing technical capabilities</strong>
+          <ul>
+            <li>Apply electronic-device and circuit models to design problems</li>
+            <li>Design and analyze amplifier and signal-conditioning circuits</li>
+            <li>Use SPICE simulation to test behavior against specifications</li>
             <li>Use oscilloscopes, function generators, and DC power supplies</li>
-            <li>Model and design circuits with LTspice</li>
+            <li>Compare measured results with modeled or calculated results</li>
+            <li>Troubleshoot circuit behavior and narrow faults to specific components</li>
+            <li>Communicate engineering methods and results clearly</li>
           </ul>
         </aside>
       </div>
     </section>
 
+    <section id="contents" aria-labelledby="contents-title">
+      <div class="section-heading">
+        <div class="kicker">02 · Navigation</div>
+        <h2 id="contents-title">Portfolio contents</h2>
+        <p class="section-intro">Use these links to move directly to each selected artifact or reflection.</p>
+        <ul class="contents">
+          <li><a href="#artifact-1">1. Op-Amp Sensor Buffer</a></li>
+          <li><a href="#artifact-2">2. Light-Following Robot Amplifier</a></li>
+          <li><a href="#artifact-3">3. Laser Tag Analog Interface PCB</a></li>
+          <li><a href="#artifact-4">4. LED Characterization and Model Fit</a></li>
+          <li><a href="#revision">Revision Based on Feedback</a></li>
+          <li><a href="#journey">Design Journey</a></li>
+          <li><a href="#aim">BYU Aim Connection</a></li>
+        </ul>
+      </div>
+    </section>
+
     <section id="projects" aria-labelledby="projects-title">
       <div class="section-heading">
-        <div class="kicker">02 · Selected course work</div>
+        <div class="kicker">03 · Selected course artifacts</div>
         <h2 id="projects-title">EC EN 340 Projects</h2>
-        <p class="section-intro">These projects apply op-amp circuit design and SPICE simulation to practical signal-conditioning problems. I emphasize comparing circuit configurations, keeping schematics readable with tags, and using simulation data to support conclusions about circuit behavior.</p>
+        <p class="section-intro">These four artifacts show progression from circuit simulation and amplifier design toward component-level characterization, physical implementation, and troubleshooting. The final two entries are structured for the lab evidence you plan to add.</p>
       </div>
 
       <div class="project-grid">
-        <article class="project">
+        <article class="project" id="artifact-1">
           <span class="project-number" aria-hidden="true">1</span>
-          <span class="tag">Lab / Analysis</span>
-          <h3>Project 1: Op-Amp Buffer for a Sensor</h3>
+          <span class="tag">Op-amp design · Simulation</span>
+          <h3>Op-Amp Buffer for a Sensor</h3>
           <figure class="project-figure">
-            <img src="assets/img/opamp2.png" alt="Circuit schematic and simulation evidence for the op-amp sensor buffer project" loading="lazy">
-            <figcaption>Project 1 — op-amp buffer schematic and simulation evidence.</figcaption>
+            <!-- Replace the src below with your image path. -->
+            <img src="assets/img/opamp2.png" alt="Op-amp sensor buffer schematic and simulation evidence" loading="lazy">
+            <figcaption>Artifact 1 — op-amp buffer schematic and simulation evidence.</figcaption>
           </figure>
-          <p><strong>Context:</strong> Design the simplest possible op-amp buffer for a sensor modeled as <code>0.02sin(200πt) V</code> in series with a <code>100 kΩ</code> source resistance. The circuit should preserve the signal across a load that varies from <code>1 kΩ</code> to <code>10 kΩ</code>.</p>
+          <p><strong>Problem:</strong> Design a simple buffer for a sensor modeled as <code>0.02sin(200πt) V</code> with a <code>100 kΩ</code> source resistance. The buffer must preserve the signal while driving a load that varies from <code>1 kΩ</code> to <code>10 kΩ</code>.</p>
           <dl>
-            <dt>Design requirements</dt>
-            <dd>Use an MCP6001 op amp in SPICE, two +15 V power supplies, and any needed discrete components. Set the resistor to 1 kΩ for submission and label the output node <code>out</code>.</dd>
             <dt>My contribution</dt>
-            <dd>I focused on keeping the buffer design simple and the schematic easy to follow, using tag features to make important nodes and connections clearer. I also used simulation data to evaluate the op-amp configuration and support conclusions about how well it preserves the input signal under the specified load conditions.</dd>
-            <dt>What it demonstrates</dt>
-            <dd>Op-amp buffer design, understanding source and load resistance, and using SPICE to test whether a circuit preserves a small input signal.</dd>
-            <dt>Reflection</dt>
-            <dd>The simulated output met the required output needs, showing that the buffer could preserve the sensor signal while reducing the effect of the sensor’s high source resistance on the load. This reinforced the value of a buffer when a signal source should not be significantly loaded by the next stage.</dd>
-            <dt>Next steps</dt>
-            <dd>For a real-world implementation, decide on the component order and select practical component values based on the sensor, expected load range, available supply rails, and the MCP6001’s operating limits. Then verify the design with realistic component models and measurements.</dd>
+            <dd>I developed and evaluated a buffer configuration in SPICE, kept the schematic organized with clear node labels, and used simulation results to assess how the circuit handled the sensor's source resistance and the specified load.</dd>
+            <dt>Result</dt>
+            <dd>The simulated design showed the expected buffer behavior: it preserved the sensor signal while reducing the loading effect on the source. Add or retain your final simulation plot here as evidence of the output behavior.</dd>
+            <dt>What this demonstrates</dt>
+            <dd>Understanding of voltage buffering, source and load resistance, op-amp configuration, and the use of simulation to evaluate a design against its requirements.</dd>
           </dl>
         </article>
 
-        <article class="project">
+        <article class="project" id="artifact-2">
           <span class="project-number" aria-hidden="true">2</span>
-          <span class="tag">Design / Technical explanation</span>
-          <h3>Project 2: Amplifier for a Light-Following Robot</h3>
+          <span class="tag">Amplifier design · Filtering</span>
+          <h3>Amplifier for a Light-Following Robot</h3>
           <figure class="project-figure">
-            <img src="assets/img/opamp1.png" alt="Circuit schematic and simulation evidence for the light-following robot amplifier project" loading="lazy">
-            <figcaption>Project 2 — light-following robot amplifier schematic and simulation evidence.</figcaption>
+            <!-- Replace the src below with your image path. -->
+            <img src="assets/img/opamp1.png" alt="Light-following robot amplifier schematic and simulation evidence" loading="lazy">
+            <figcaption>Artifact 2 — amplifier schematic and simulation evidence.</figcaption>
           </figure>
-          <p><strong>Context:</strong> Design an op-amp amplifier for a light-following robot that uses a sinusoidally varying flashlight signal to reduce sensitivity to room light. The input is an AC current with <code>0.1 mA</code> peak-to-peak amplitude connected to a <code>1 kΩ</code> resistor to ground.</p>
+          <p><strong>Problem:</strong> Design an amplifier for a light-following robot using a sinusoidally varying flashlight signal, while reducing sensitivity to room light. The input is an AC current with <code>0.1 mA</code> peak-to-peak amplitude connected to a <code>1 kΩ</code> resistor to ground.</p>
           <dl>
-            <dt>Design requirements</dt>
-            <dd>Use an MCP6002 op amp and a 9 V battery connected to ground, with no additional voltage sources. Preserve all connections in the starting circuit. Target an output of <code>1 V peak-to-peak ±5%</code> and an average output voltage below <code>1 mV</code>. Submit an NGspice <code>.cir</code> file and label the output node <code>Out</code>.</dd>
             <dt>My contribution</dt>
-            <dd>I explored a variety of filter options and op-amp configurations, then used simulation data to compare their behavior and support my design conclusions. I also used schematic tags to organize and label the circuit clearly, making the signal path and important nodes easier to read while checking the output amplitude and average voltage against the requirements.</dd>
-            <dt>What it demonstrates</dt>
-            <dd>Designing an amplifier to meet quantitative specifications, working within power-supply and circuit constraints, and validating a design with NGspice.</dd>
-            <dt>Reflection</dt>
-            <dd>The simulated output met the required output needs, including the target peak-to-peak amplitude and the low average-voltage requirement. Comparing filter options and op-amp configurations helped show how circuit choices affect both the desired signal amplitude and the rejection of unwanted low-frequency or steady components.</dd>
-            <dt>Next steps</dt>
-            <dd>For a real-world implementation, determine the component order and choose practical resistor and capacitor values to meet the required gain and filtering behavior with real sensor signals. Next, check component tolerances, the available 9 V supply, and the op amp’s input/output limits, then validate the design with hardware measurements.</dd>
+            <dd>I explored filter options and op-amp configurations, compared their behavior using NGspice, and organized the schematic so the signal path and important nodes were clear. I evaluated the output amplitude and average voltage against the design requirements.</dd>
+            <dt>Result</dt>
+            <dd>The simulated output met the target peak-to-peak amplitude of <code>1 V ±5%</code> and the average-output requirement of less than <code>1 mV</code>. The comparison of configurations helped me understand how gain and filtering affect the desired signal and unwanted components.</dd>
+            <dt>What this demonstrates</dt>
+            <dd>Amplifier design under power-supply and circuit constraints, filter selection, quantitative verification, and technical communication through a readable schematic.</dd>
           </dl>
-          <p class="project-link"><a href="https://learningsuite.byu.edu/plugins/Upload/fileDownload.php?fileId=290cec0b-XI5l-I0ZL-9cP8-PGad093b3957" target="_blank" rel="noopener noreferrer">Download Project 2 starting file →</a></p>
+          <p class="project-link"><a href="https://learningsuite.byu.edu/plugins/Upload/fileDownload.php?fileId=290cec0b-XI5l-I0ZL-9cP8-PGad093b3957" target="_blank" rel="noopener noreferrer">Download Project 2 starting file</a></p>
+        </article>
+
+        <article class="project" id="artifact-3">
+          <span class="project-number" aria-hidden="true">3</span>
+          <span class="tag pending">Add final board photo and results</span>
+          <span class="tag">PCB design · Hardware · Troubleshooting</span>
+          <h3>Laser Tag Analog Interface Board</h3>
+          <figure class="project-figure">
+            <!-- Add a photo of your completed PCB here, for example:
+            <img src="assets/img/laser-tag-pcb.jpg" alt="Completed laser tag analog interface printed circuit board">
+            -->
+            <img src="assets/img/laser-tag-pcb.jpg" alt="Placeholder for a photograph of the completed laser tag analog interface PCB" loading="lazy">
+            <figcaption>Artifact 3 — add a clear photograph of the completed two-sided analog interface PCB.</figcaption>
+          </figure>
+          <p><strong>Problem:</strong> Design and build an optical transmitter and receiver interface for the EC EN 390 Laser Tag project. The board operates from a <code>3.3 V</code> supply and must detect the specified player-frequency signals while limiting noise and maintaining less than <code>3 dB</code> variation across player frequencies.</p>
+          <dl>
+            <dt>My contribution</dt>
+            <dd>I worked on the analog interface design and its physical implementation as a printed circuit board. The lab required a receiver amplifier for the photodiode signal, transmitter circuitry to drive the LED, a four-connection interface header, measurement points, and a two-sided board layout. <strong>Update this paragraph with the specific design, layout, soldering, testing, and troubleshooting tasks you personally completed.</strong></dd>
+            <dt>Result</dt>
+            <dd><strong>Complete after final testing:</strong> Insert the measured receiver signal/noise result, frequency-response result, and whether the finished PCB met the lab specifications. Do not claim passoff until you have verified it with your measurements.</dd>
+            <dt>What this demonstrates</dt>
+            <dd>Translating a circuit design into a physical PCB, integrating transmitter and receiver functions, planning measurement points, and using test data to diagnose circuit behavior. This artifact can also show how I narrow an unwanted result to a particular component or circuit stage.</dd>
+          </dl>
+          <p class="notice"><strong>Evidence to add:</strong> PCB photograph, final schematic or layout if permitted, and a concise table or plot of measured performance.</p>
+        </article>
+
+        <article class="project" id="artifact-4">
+          <span class="project-number" aria-hidden="true">4</span>
+          <span class="tag pending">Add your best-fit plot and calculations</span>
+          <span class="tag">LED characterization · Data analysis · Modeling</span>
+          <h3>LED Current-Voltage Characterization and Model Fit</h3>
+          <figure class="project-figure">
+            <!-- Add your current-versus-voltage plot / best-fit image here. -->
+            <img src="assets/img/led-iv-best-fit.png" alt="Placeholder for LED current-voltage data and fitted model curve" loading="lazy">
+            <figcaption>Artifact 4 — add the measured LED I–V data and fitted model curve.</figcaption>
+          </figure>
+          <p><strong>Problem:</strong> Characterize an LED's current-voltage relationship and develop a model using the diode parameters <code>IS</code>, <code>N</code>, and series resistance <code>RS</code>. The model is then used to predict resistor values for LED currents of <code>10 mA</code> and <code>100 mA</code> with a <code>5 V</code> supply.</p>
+          <dl>
+            <dt>My contribution</dt>
+            <dd>I used the circuit and diode relationships developed in class to interpret the measured I–V behavior and determine model parameters. I also used AI as an analysis aid to generate the best-fit visualization from the calculations and design requirements. The calculations and specified requirements—not the AI output by itself—provide the engineering basis for evaluating the fit. <strong>Add the exact calculations, parameter values, and what you personally checked or adjusted.</strong></dd>
+            <dt>Result</dt>
+            <dd><strong>Complete after inserting your data:</strong> Report the fitted values of <code>IS</code>, <code>N</code>, and <code>RS</code>, and compare simulated and measured currents at the two resistor values. Include the percentage error and state whether the model is within the lab's 5% target.</dd>
+            <dt>What this demonstrates</dt>
+            <dd>LED characterization, nonlinear device modeling, using measured data to fit a circuit model, applying calculations to component selection, and evaluating AI-assisted analysis against engineering requirements.</dd>
+          </dl>
+          <p class="notice"><strong>Evidence to add:</strong> Best-fit I–V plot with measured data and model curve, parameter values, and a small simulated-versus-measured comparison table.</p>
         </article>
       </div>
-      <p class="notice">When sharing this portfolio, follow course rules for publishing files and team work, and clearly identify individual contributions.</p>
+      <p class="notice">When sharing this portfolio, follow course rules for publishing files and team work. Identify your individual contribution accurately and include only results you can support with your own evidence.</p>
+    </section>
+
+    <section id="revision" aria-labelledby="revision-title">
+      <div class="section-heading">
+        <div class="kicker">04 · Iteration and feedback</div>
+        <h2 id="revision-title">Revision Based on Feedback</h2>
+        <p class="section-intro">This section makes the development of the portfolio visible rather than presenting it as a finished collection without context.</p>
+      </div>
+      <div class="panel">
+        <h3>Changes in this checkpoint draft</h3>
+        <ul>
+          <li>Reorganized the page around a professional introduction, direct navigation, four selected artifacts, and a reflection.</li>
+          <li>Revised each artifact to identify the engineering problem, my contribution, the result, and the skill or knowledge it demonstrates.</li>
+          <li>Expanded the portfolio beyond simulation-only work to include physical PCB implementation and measured component characterization.</li>
+          <li>Added a specific explanation of troubleshooting and data analysis as developing strengths.</li>
+        </ul>
+        <div class="feedback">
+          <strong>Add the specific feedback you received:</strong>
+          <p>[In 1–2 sentences, state the feedback from your instructor, TA, peer, or earlier checkpoint. Explain which change above directly responds to it. Replace this bracketed note before submitting.]</p>
+        </div>
+      </div>
     </section>
 
     <section id="journey" aria-labelledby="journey-title">
       <div class="section-heading">
-        <div class="kicker">03 · Reflection</div>
+        <div class="kicker">05 · Reflection</div>
         <h2 id="journey-title">Design Journey</h2>
-        <p class="section-intro">A short account of what I have learned so far and how I will use that learning in the next iteration.</p>
+        <p class="section-intro">What has changed in my approach to circuit design during EC EN 340.</p>
       </div>
       <div class="journey-grid">
         <article class="journey-card">
-          <h3>What I have learned</h3>
-          <p>These projects reinforced that a circuit should be evaluated against measurable requirements, not just whether the schematic looks correct. Simulation helps me check whether the output behaves as intended and compare design choices before building hardware. I also learned that clear node labels and a readable signal path make a circuit easier to inspect and troubleshoot.</p>
+          <h3>What I can do now</h3>
+          <p>At the beginning of the semester, I did not have the same ability to troubleshoot circuit-design problems systematically. I can now identify fundamental circuit issues, use measurements and data to understand why a circuit is producing an undesired result, and narrow the likely cause to specific components or stages on the board. Rather than treating an unexpected output as one general problem, I can use evidence to investigate where the problem is occurring.</p>
         </article>
         <article class="journey-card">
-          <h3>What I want to improve</h3>
-          <p>I want to improve my ability to translate a working simulation into a practical hardware design. That means explaining why I chose a component order, showing how component values were selected, and considering real op-amp limits and component tolerances instead of relying only on idealized simulation behavior.</p>
+          <h3>How my approach has developed</h3>
+          <p>I have become more comfortable connecting calculations, circuit models, simulation, and physical measurements. I am learning to compare what a design should do with what the actual circuit does, then use that difference to guide troubleshooting. The variety of projects has helped me see that circuit design involves more than producing a working schematic: it also requires selecting components, testing assumptions, interpreting data, and communicating results.</p>
         </article>
       </div>
-      <div class="next-step" id="next-steps">
-        <strong>My next step:</strong> For each circuit, document the component order and calculate practical resistor and capacitor values, then check the design against the required output specifications and the op amp’s supply, input, and output limits. Where possible, validate the revised design with realistic models and hardware measurements.
+      <div class="next-step">
+        <strong>Next step:</strong> Continue improving the connection between predicted and measured circuit behavior. For each hardware project, document the relevant measurements, identify discrepancies, and explain how the evidence led to a specific design or component-level adjustment.
+      </div>
+    </section>
+
+    <section id="aim" aria-labelledby="aim-title">
+      <div class="section-heading">
+        <div class="kicker">06 · BYU learning connection</div>
+        <h2 id="aim-title">Intellectually Enlarging</h2>
+        <p class="section-intro">Connecting practical engineering work with a BYU Aim.</p>
+      </div>
+      <div class="panel">
+        <p>The variety of projects in EC EN 340 has been intellectually enlarging because each project requires me to approach electronic systems from a different perspective. I have worked with amplifier design, filtering, circuit simulation, PCB layout, LED characterization, and hardware troubleshooting. Seeing these topics in different contexts has expanded my understanding beyond memorizing individual circuit principles.</p>
+        <p>Building and testing circuits has also helped me understand engineering fundamentals in a more practical way. Concepts such as current, voltage, resistance, gain, filtering, and device models become more meaningful when I use them to make design decisions and then compare those decisions with actual measurements. This experience reflects the BYU Aim of becoming intellectually enlarged: I am learning to connect theory with real engineering problems, ask better questions about unexpected results, and use evidence to improve a design.</p>
+        <p><a href="https://aims.byu.edu/" target="_blank" rel="noopener noreferrer">BYU Aims</a></p>
       </div>
     </section>
   </main>
@@ -230,7 +317,7 @@
   <footer>
     <div class="footer-inner">
       <p><strong>Owen Preece</strong> · EC EN 340 Portfolio</p>
-      <p>Electronic Circuit Design</p>
+      <p>Electronic Circuit Design · BYU</p>
     </div>
   </footer>
 </body>
